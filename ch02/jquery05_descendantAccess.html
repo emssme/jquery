@@ -43,6 +43,7 @@
             txt += $(this).text();
         });
         $(".result1").text(txt);
+
         //클래스가 result2인 곳에 div의 자식 요소인 em의 text를 출력하시오.
         var txt = "";
         $("div > em").each(function(){
@@ -60,7 +61,7 @@
         $(function(){
             $("#btn1").click(function(){
                 for(var i=1; i<6; i++){
-                    $(".imglist").append("<li><img src='../im"+i+".jpg></li>");
+                    $(".imglist").append("<li><img src='../data/im"+i+".jpg'></li>");
                 }
             })
         })
