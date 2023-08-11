@@ -24,7 +24,7 @@
     <h2 id="lee"></h2>
     <h2 id="park"></h2>
     <script>
-        $(function(){
+        $(function(){   //곧바로 실행
             $("#lee").text("이소윤");
         });
     </script>
@@ -43,7 +43,8 @@
 
         $(function(){
             //기본 문법
-            //$("선택자"){}
+            //$("선택자").메소드();
+            //$(객체).속성;
             $(".lst.li").click(function(){
                 alert($(this).text());
             });
@@ -51,7 +52,7 @@
             var sw = true;
             $("#btn1").click(function(){
                 if(sw){
-                    $("#park").text("악당 박진권");
+                    $("#park").text("태풍");
                 } else {
                     $("#park").text("흠");
                 }
@@ -59,7 +60,7 @@
                 var len = $(".lst li").length + 1;
                 $(".lst").append("<li>아이템"+len+"</li>");
                 $(".lst li").css("color","black");
-                $(".lst li:last-child").css("color","blue");
+                $(".lst li:last-child").css("color","deeppink");
             });
         });
     </script>
