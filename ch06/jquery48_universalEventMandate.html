@@ -15,7 +15,9 @@
     <script>
     $(document).ready(function(){
         //p 요소를 클릭하면, 클릭된 p요소의 다음(동생) 요소로 "<p>Another paragraph!</p>" 이 추가되도록 하시오.(단, 새로 추가된 p요소에도 이벤트가 상속되어야 함)
-
+        $("p").live("click",function(){
+            $(this).after("<p>Another paragraph!</p>");
+        });
     });    
     </script>
 </head>
