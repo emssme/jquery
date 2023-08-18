@@ -14,11 +14,11 @@
     .container, .page { width:100%; height:100%; }
     .page { background-repeat:no-repeat; background-size:cover; 
     background-position: center center; }
-    #page1 { background-image: url("black1.jpg"); }
-    #page2 { background-image: url("black2.jpg");
+    #page1 { background-image: url("../data/black1.jpg"); }
+    #page2 { background-image: url("../data/black2.jpg");
      background-attachment:fixed;  }
-    #page3 { background-image: url("black3.jpg"); }
-    #page4 { background-image: url("black4.jpg"); }
+    #page3 { background-image: url("../data/black3.jpg"); }
+    #page4 { background-image: url("../data/black4.jpg"); }
     .boxFrame { width:1000px; margin:0px auto;  padding-top:100px;
     display:none; }
     .col { width:300px; float:left; margin:10px; }
@@ -34,6 +34,22 @@
     <script>
         $(document).ready(function(){
             //페이지 패럴럭스 스크롤링을 진행하시오.
+            var ht = $(window).height();
+            var pageCnt = $(".page").length;
+            $(window).scroll(function(){
+                var scTop = $(window).scrollTop();
+                //console.log(scTop);
+                if(scTop >= ht*2-500){
+                    $(".boxFrame").fadeIn(1500);
+                } else {
+                    $(".boxFrame").fadeOut(1500);
+                }
+                if(scTop >= 100){
+                    $("#gnb").slideDown(800);
+                } else {
+                    $("#gnb").slideUp(800);
+                }
+            })
         });
         </script>
 </head>
@@ -64,13 +80,13 @@
         <section class="page" id="page3">
             <div class="boxFrame">
                 <div class="col">
-                    <img src="https://placeimg.com/300/200/any/grayscale" alt="">
+                    <img src="https://placehold.it/300*200/333" alt="">
                 </div>
                 <div class="col">
-                    <img src="https://placeimg.com/300/200/any/grayscale" alt="">
+                    <img src="https://placehold.it/300*200/deepskyblue" alt="">
                 </div>
                 <div class="col">
-                    <img src="https://placeimg.com/300/200/any/grayscale" alt="">
+                    <img src="https://placehold.it/300*200/deeppink" alt="">
                 </div>
             </div>
         </section>
