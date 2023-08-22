@@ -26,17 +26,19 @@
     $(document).ready(function(){
         //아이디가 btn1인 버튼을 클릭하면, .lst 내부의 li 요소를 보이게 하는 효과를 적용  ->display:none; 되어있는 것만 보이게 함
         $("#btn1").on("click",function(){
-            $(".lst li").show();
+            $(".lst li").show("fast");
         });
         
-        //아이디가 btn2인 버튼을 클릭하면, .lst 내부의 li 요소를 숨기게 하는 효과를 적용
+        //아이디가 btn2인 버튼을 클릭하면, .lst 내부의 li 요소를 숨기게 하는 효과를 적용    slow: 1초미만
         $("#btn2").on("click",function(){
-            $(".lst li").hide();
+            $(".lst li").hide("slow");
         });
 
         //아이디가 btn3인 버튼을 클릭하면, .lst 내부의 li 요소를 교대로 보이고, 숨기게 하는 효과를 적용
         $("#btn3").on("click",function(){
-            $(".lst li").toggle();
+            $(".lst li").toggle(2000, function(){
+                $(".txt").text($(".txt").text()+"변경됨");
+            });
         });
     });
     </script>
