@@ -27,22 +27,35 @@
 
         //아이디가 btn1인 버튼을 클릭하면, .lst 내부의 li 요소를 펼쳐지면서 보여지는 효과를 적용
         $("#btn1").on("click",function(){
-            $(".lst li").slideDown();
+            $(".lst li").slideDown(2000,function(){
+                $(".txt").text("리스트박스가 펼쳐지고 있습니다.")
+            });
         });
         //아이디가 btn2인 버튼을 클릭하면, .lst 내부의 li 요소를 접히면서 숨겨지는 효과를 적용
         $("#btn2").on("click",function(){
-            $(".lst li").slideUp();
+            $(".lst li").slideUp("fast",function(){
+                $(".txt").text("리스트박스가 접히고 있습니다.")
+            });
         });
+
+        //stop(), clearQueue()
         //아이디가 btn3인 버튼을 클릭하면, .lst 내부의 li 요소를 교대로 펼쳐져 보이고, 접히며 숨겨지는 효과를 적용
-        $("#btn2").on("click",function(){
-            $(".lst li").slideToggle();
+        $("#btn3").on("click",function(){
+            $(".lst li").stop().slideToggle(3000,function(){
+                var state = $(".lst li").css("display");
+                if(state==="none"){
+                    $(".txt").text("리스트박스가 펼쳐졌습니다.")
+                } else {
+                    $(".txt").text("리스트박스가 접혔습니다.")
+                }
+            });
         });
     });
     </script>
 </head>
 <body>
     <section class="container">
-        <h1>보이기/숨기기 효과 메소드 - slideDown(), sildeUp(), slideToggle()</h1>
+        <h1>보이기/숨기기 효과 메소드 - slideDown(), sildeUp(), slideToggle() - 세로방향</h1>
         <p>세로 방향으로 펼쳐지면서 보여지거나 접히면서 숨겨지는 효과</p>
         <h1>지연 메소드 - delay(), 정지 메소드 - stop()</h1>
         <article class="data">
@@ -52,9 +65,9 @@
                 <button id="btn3">토글 버튼</button>
             </div>
             <ul class="lst">
-                <li><img src="item1.png" alt=""></li>
-                <li><img src="item2.png" alt=""></li>
-                <li><img src="item3.png" alt=""></li>
+                <li><img src="../data/item1.png" alt=""></li>
+                <li><img src="../data/item2.png" alt=""></li>
+                <li><img src="../data/item3.png" alt=""></li>
             </ul>
             <div class="txt">버튼을 누르면, 효과가 실행됩니다.</div>
         </article>
