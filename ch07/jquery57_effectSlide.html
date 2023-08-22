@@ -26,12 +26,17 @@
     $(document).ready(function(){
 
         //아이디가 btn1인 버튼을 클릭하면, .lst 내부의 li 요소를 펼쳐지면서 보여지는 효과를 적용
-
+        $("#btn1").on("click",function(){
+            $(".lst li").slideDown();
+        });
         //아이디가 btn2인 버튼을 클릭하면, .lst 내부의 li 요소를 접히면서 숨겨지는 효과를 적용
-
-
+        $("#btn2").on("click",function(){
+            $(".lst li").slideUp();
+        });
         //아이디가 btn3인 버튼을 클릭하면, .lst 내부의 li 요소를 교대로 펼쳐져 보이고, 접히며 숨겨지는 효과를 적용
-
+        $("#btn2").on("click",function(){
+            $(".lst li").slideToggle();
+        });
     });
     </script>
 </head>

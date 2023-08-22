@@ -37,7 +37,7 @@
         //아이디가 btn3인 버튼을 클릭하면, .lst 내부의 li 요소를 교대로 보이고, 숨기게 하는 효과를 적용
         $("#btn3").on("click",function(){
             $(".lst li").toggle(2000, function(){
-                $(".txt").text($(".txt").text()+"변경됨");
+                $(".txt").text($(".txt").text()+"변경됨");  //li 3개라 3번 실행됨
             });
         });
     });
